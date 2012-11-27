@@ -2,8 +2,7 @@
 class View {
     protected $template_dir = '/ceri/homes1/f/fef/public_html/cs25010/template/';
     protected $vars = array();
-    public function __construct($template_dir = null) {
-            $this->template_dir = $template_dir;
+    public function __construct() {
     }
     public function render($template_file) {
         if (file_exists($this->template_dir.$template_file)) {
