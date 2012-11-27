@@ -1,6 +1,6 @@
 <?php
 class View {
-    protected $template_dir = 'templates/';
+    protected $template_dir = 'template/';
     protected $vars = array();
     public function __construct($template_dir = null) {
             $this->template_dir = $template_dir;
