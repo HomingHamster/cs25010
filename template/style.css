@@ -9,6 +9,17 @@ body {
 	color:#222;
 }
 
+#disclaimer {
+	margin:10px auto;
+	padding: 2px 10px;
+	width:95%;
+	background-color: #ffbebe;
+	border:1px solid #f00;
+	text-align: center;
+	color: #222;
+	font-size: 0.6em;
+}
+
 #page {
 	width:90%;
 	background-color: #b6ccb8;
