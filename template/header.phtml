@@ -21,15 +21,15 @@
 				<li><a href="index.php"> Home </a> </li>
 				<li><a href="about.php"> About </a> </li>
 				<li><a href="#"> Writeup </a> </li>
-				<li><a href="#"> Shop </a> </li>
+				<li><a href="shop.php"> Shop </a> </li>
 			</ul>
 		</div>
 		<div id="bodyarea">
 			<div id="loginForm">
 				<ul>
-					<?php if ($this->logged_in) : ?>
-						<form action="shop.php">
-					        <li><input size="13" type="password" /></li>
+					<?php if (!$this->logged_in) : ?>
+						<form action="shop.php" method="POST">
+					        <li><input size="13" /></li>
 					        <li><input type="submit" value="login" /></li>
 					    </form>
 					<?php else : ?>
