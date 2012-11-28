@@ -27,9 +27,10 @@
 		<div id="bodyarea">
 			<div id="loginForm">
 				<ul>
+					<li><?php echo $this->logged_in; ?></li>
 					<?php if (!$this->logged_in) : ?>
 						<form action="shop.php" method="POST">
-					        <li><input size="13" /></li>
+					        <li><input name="name" size="13" /></li>
 					        <li><input type="submit" value="login" /></li>
 					    </form>
 					<?php else : ?>
