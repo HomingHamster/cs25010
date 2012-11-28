@@ -1,5 +1,10 @@
 <?php
-include_once('view.php');
-$t = new View();
+// index.php - Author Felix Farquharson (fef)
+
+//set everything up...
+include_once('init.php');
+
+//Render the template without any special
+//attributes because this is a "flat" page.
 $t->render('index.phtml');
 ?>
