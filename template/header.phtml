@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="template/style.css" />
+	<meta charset="UTF-8">
+	<title>webshop</title>
+	<link rel="stylesheet" href="template/style.css" />
 </head>
 <body>
 	<div id="disclaimer">
@@ -19,13 +21,20 @@
 				<li><a href="index.php"> Home </a> </li>
 				<li><a href="about.php"> About </a> </li>
 				<li><a href="#"> Writeup </a> </li>
+				<li><a href="#"> Shop </a> </li>
 			</ul>
 		</div>
 		<div id="bodyarea">
-
 			<div id="loginForm">
-			    <ul>
-			        <li><input size="13" type="password" /></li>
-			        <li><input type="submit" value="login" /></li>
-			    </ul>
+				<ul>
+					<?php if ($this->logged_in) : ?>
+						<form action="shop.php">
+					        <li><input size="13" type="password" /></li>
+					        <li><input type="submit" value="login" /></li>
+					    </form>
+					<?php else : ?>
+						<li>Welcome <?php echo $this.user_name; ?></li>
+						<li><a href="#">Logout</a></li>
+					<?php endif; ?>
+				</ul>
 			</div>
