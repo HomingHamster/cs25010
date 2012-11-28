@@ -1,6 +1,6 @@
 <?php
 //Maintain the session.
-session_save_path("/ceri/homes1/f/fef/.php_sessions")
+session_save_path("/ceri/homes1/f/fef/.php_sessions");
 session_start();
 
 //Setup the template manager

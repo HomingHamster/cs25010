@@ -27,15 +27,14 @@
 		<div id="bodyarea">
 			<div id="loginForm">
 				<ul>
-					<li><?php echo $this->logged_in; ?></li>
-					<?php if (!$this->logged_in) : ?>
-						<form action="shop.php" method="POST">
+					<?php if ($this->logged_in == False) : ?>
+						<form action="login.php" method="POST">
 					        <li><input name="name" size="13" /></li>
 					        <li><input type="submit" value="login" /></li>
 					    </form>
 					<?php else : ?>
-						<li>Welcome <?php echo $this.user_name; ?></li>
-						<li><a href="#">Logout</a></li>
+						<li>Welcome <?=$this->user_name ?></li>
+						<li><a href="logout.php">logout</a></li>
 					<?php endif; ?>
 				</ul>
 			</div>

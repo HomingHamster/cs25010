@@ -1,12 +1,8 @@
 <?php
 // about.php - Author Felix Farquharson (fef)
 
-//Maintain the session.
-session_start();
-
-//Setup the template manager
-include_once('view.php');
-$t = new View();
+//set everything up...
+include_once('init.php');
 
 //Render the template without any special
 //attributes because this is a "flat" page.
