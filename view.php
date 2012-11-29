@@ -7,10 +7,16 @@
 // think)
 
 class View {
+    //this is the directory (on central) that
+    //will hold all of the template (.phtml)
+    //files to be rendered.
     protected $template_dir = 
         '/ceri/homes1/f/fef/public_html/cs25010/template/';
+    
+    //instantiate the array to hold the variables.
     protected $vars = array();
 
+    //is needed later (?)
     public function __construct() {
     }
 
