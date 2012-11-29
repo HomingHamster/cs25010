@@ -26,15 +26,17 @@
 		</div>
 		<div id="bodyarea">
 			<div id="loginForm">
-				<ul>
 					<?php if ($this->logged_in == False) : ?>
 						<form action="login.php" method="POST">
+						<ul>
 					        <li><input name="name" size="13" /></li>
 					        <li><input type="submit" value="login" /></li>
+					    </ul>
 					    </form>
 					<?php else : ?>
+					    <ul>
 						<li>Welcome <?=$this->user_name ?></li>
 						<li><a href="logout.php">logout</a></li>
+					    </ul>
 					<?php endif; ?>
-				</ul>
 			</div>
