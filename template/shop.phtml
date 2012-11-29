@@ -1,17 +1,26 @@
 <?php include "header.phtml"; ?>
 <h1>Browse the shop</h1>
 <p>this comes from the shop file</p>
-<table>
-<tr>
-<th>Name</th><th>Platform</th><th>Description</th><th>Price</th>
-</tr>
-<?php foreach ($this->games as $game): ?>
-    <tr>
-        <td><?=$game["title"]?></td>
-        <td><?=$game["platform"]?></td>
-        <td><?=$game["description"]?></td>
-        <td><?=$game["price"]?></td>
-    </tr>
-<?php endforeach; ?>
-</table>
+<form action="shop.php" method="post">
+	<input type="submit" value="Add to basket" />
+	<table>
+	<tr>
+		<th>Name</th>
+		<th>Platform</th>
+		<th>Description</th>
+		<th>Price</th>
+		<th>Select</th>
+	</tr>
+	<?php foreach ($this->games as $game): ?>
+	    <tr>
+	        <td><?=$game["title"]?></td>
+	        <td><?=$game["platform"]?></td>
+	        <td><?=$game["description"]?></td>
+	        <td><?=$game["price"]?></td>
+	        <td><input type="checkbox" name="select" value="<?=$game["refnumber"]?>" />
+	    </tr>
+	<?php endforeach; ?>
+	</table>
+	<input type="submit" value="Add to basket" />
+</form>
 <?php include "footer.phtml"; ?>
