@@ -10,6 +10,7 @@ include_once('init.php');
 //it available so that later code can 
 //use it.
 if (isset($_POST['name'])){
+	//TODO: validate name!
     $_SESSION['name'] = $_POST['name'];
     $t->user_name = $_POST['name'];
     //if the user is sucessful, put
@@ -19,7 +20,7 @@ if (isset($_POST['name'])){
 	//if this is happening then the
 	//form is somehow incorrect, or
 	//there is no spoon (form).
-	echo "log in now!!!!!";
+	$t->render("login.phtml");
 }
 
 ?>
