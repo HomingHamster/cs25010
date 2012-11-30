@@ -1,0 +1,30 @@
+<?php include "header.phtml"; ?>
+<h1>Your Basket.</h1>
+<p>Here is where you can update your basket.</p>
+<form action="basket.php" method="post">
+	<input type="submit" name="basketRemoveSelected" value="Remove from basket" />
+	<input type="submit" name="basketClear" value="Clear your basket" />
+	<input type="submit" name="basketCheckout" value="Checkout!" />
+	<table>
+	<tr>
+		<th>Name</th>
+		<th>Platform</th>
+		<th>Description</th>
+		<th>Price</th>
+		<th>Select</th>
+	</tr>
+	<?php foreach ($this->basket_games as $game): ?>
+	    <tr>
+	        <td><?=$game["title"]?></td>
+	        <td><?=$game["platform"]?></td>
+	        <td><?=$game["description"]?></td>
+	        <td><?=$game["price"]?></td>
+	        <td><input type="checkbox" name="basketSelect[]" value="<?=$game["refnumber"]?>" />
+	    </tr>
+	<?php endforeach; ?>
+	</table>
+	<input type="submit" name="basketRemoveSelected" value="Remove from basket" />
+	<input type="submit" name="basketClear" value="Clear your basket" />
+	<input type="submit" name="basketCheckout" value="Checkout!" />
+</form>
+<?php include "footer.phtml"; ?>

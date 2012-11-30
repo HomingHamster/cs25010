@@ -1,9 +1,11 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<meta charset="UTF-8">
 	<title>webshop</title>
-	<link rel="stylesheet" href="template/style.css" />
+	<meta http-equiv="content-type" 
+		content="text/html;charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="template/style.css" />
 </head>
 <body>
 	<div id="disclaimer">
@@ -20,14 +22,14 @@
 			<ul>
 				<li><a href="index.php"> Home </a> </li>
 				<li><a href="about.php"> About </a> </li>
-				<li><a href="#"> Writeup </a> </li>
 				<li><a href="shop.php"> Shop </a> </li>
+				<li><a href="basket.php"> Basket </a> </li>
 			</ul>
 		</div>
 		<div id="bodyarea">
 			<div id="loginForm">
 					<?php if ($this->logged_in == False) : ?>
-						<form action="login.php" method="POST">
+						<form action="login.php" method="post">
 						<ul>
 					        <li><input name="name" size="13" /></li>
 					        <li><input type="submit" value="login" /></li>
