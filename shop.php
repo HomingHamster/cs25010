@@ -15,11 +15,17 @@ if ($t->logged_in == False){
 //to do somthing about it.
 if (isset($_POST["select"])){
 	$selected_games = $_POST['select'];
+  var_dump($_POST["select"]);
 	//If there are actually some games selected
 	//not just an empty form then we want to 
 	//save the selected games in the session.
 	if(!empty($selected_games)) {
-		$_SESSION["basket"] = $selected_games;
+    if (empty($_SESSION["basket"])){
+      $_SESSION["basket"] = array();
+    }
+    foreach ($selected_games as $value) {
+      $_SESSION["basket"][] = $value;
+    }
 	}
 }
 
@@ -51,12 +57,21 @@ if (!$conn){
 	//as an array and add them into the array we
 	//just created.
 	var_dump($_SESSION["basket"]);
-    while ($rowarray = pg_fetch_array($res)){
-    	foreach($_SESSION["basket"] as $basket_ref){
-    		if ($rowarray['refnumber'] != $basket_ref{
-    			$games_array[] = $rowarray;
-    		}
-    }
+  while ($rowarray = pg_fetch_array($res)){
+      if (isset($_SESSION['basket'])) {
+          $in_basket = False;
+          foreach ($_SESSION['basket'] as $basket_case) {
+              if ($rowarray['refnumber'] == $basket_case){
+                $in_basket = True;
+              }
+          }
+          if (!$in_basket){
+            $games_array[] = $rowarray;
+          }
+ 	    } else {
+ 	        $games_array[] = $rowarray;
+ 	    }
+  }
 }
 
 //assign the array of arrays that holds the

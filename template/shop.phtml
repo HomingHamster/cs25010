@@ -2,7 +2,7 @@
 <h1>Browse the shop</h1>
 <p>this comes from the shop file</p>
 <form action="shop.php" method="post">
-	<input type="submit" value="Add to basket" />
+	<input type="submit" name="selectSubmit" value="Add to basket" />
 	<table>
 	<tr>
 		<th>Name</th>
@@ -17,10 +17,10 @@
 	        <td><?=$game["platform"]?></td>
 	        <td><?=$game["description"]?></td>
 	        <td><?=$game["price"]?></td>
-	        <td><input type="checkbox" name="select" value="<?=$game["refnumber"]?>" />
+	        <td><input type="checkbox" name="select[]" value="<?=$game["refnumber"]?>" />
 	    </tr>
 	<?php endforeach; ?>
 	</table>
-	<input type="submit" value="Add to basket" />
+	<input type="submit" name="selectSubmit" value="Add to basket" />
 </form>
 <?php include "footer.phtml"; ?>
