@@ -3,7 +3,8 @@
 
 body {
 	background-color: #6d968d;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: Arial, 
+		Helvetica, sans-serif;
 	margin:0;
 	padding: 0;
 	color:#222;
@@ -26,16 +27,24 @@ body {
 	margin:20px auto;
 	padding: 0;
 
--moz-box-shadow: 0px 0px 10px #111;
--webkit-box-shadow: 0px 0px 10px #111;
-box-shadow: 0px 0px 10px #111;
+	-moz-box-shadow: 0px 0px 10px #111;
+	-webkit-box-shadow: 0px 0px 10px #111;
+	box-shadow: 0px 0px 10px #111;
 
+}
+
+#page #bodyarea table,th, td{
+	border:1px solid #333;
+	border-collapse:collapse;
+	padding:4px;
+	margin:0;
 }
 
 #page #header {
 	position:relative;
 	background-color: #1f3642;
-	background-image: url("../img/header_grad.png");
+	background-image: 
+		url("../img/header_grad.png");
 	background-repeat: repeat-x;
 	vertical-align: middle;
 	height: 80px;
@@ -102,6 +111,11 @@ box-shadow: 0px 0px 10px #111;
 	text-transform: uppercase;
 	font-size: 1.4em;
 	font-weight: 300;
+}
+
+#page #bodyarea .totalcost{
+	text-align: right;
+	font-weight: bold;
 }
 
 #page #footer{

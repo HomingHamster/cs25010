@@ -27,6 +27,7 @@ class View {
         include $this->template_dir.$template_file;
     }
 
+    //simple get and set methods below :)
     public function __set($name, $value) {
         $this->vars[$name] = $value;
     }

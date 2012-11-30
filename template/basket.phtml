@@ -6,22 +6,26 @@
 	<input type="submit" name="basketClear" value="Clear your basket" />
 	<input type="submit" name="basketCheckout" value="Checkout!" />
 	<table>
-	<tr>
-		<th>Name</th>
-		<th>Platform</th>
-		<th>Description</th>
-		<th>Price</th>
-		<th>Select</th>
-	</tr>
-	<?php foreach ($this->basket_games as $game): ?>
-	    <tr>
-	        <td><?=$game["title"]?></td>
-	        <td><?=$game["platform"]?></td>
-	        <td><?=$game["description"]?></td>
-	        <td><?=$game["price"]?></td>
-	        <td><input type="checkbox" name="basketSelect[]" value="<?=$game["refnumber"]?>" />
-	    </tr>
-	<?php endforeach; ?>
+		<tr>
+			<th>Name</th>
+			<th>Platform</th>
+			<th>Description</th>
+			<th>Price</th>
+			<th>Select</th>
+		</tr>
+			<?php foreach ($this->basket_games as $game): ?>
+			    <tr>
+			        <td><?=$game["title"]?></td>
+			        <td><?=$game["platform"]?></td>
+			        <td><?=$game["description"]?></td>
+			        <td><?=$game["price"]?></td>
+			        <td><input type="checkbox" name="basketSelect[]" value="<?=$game["refnumber"]?>" />
+			    </tr>
+			<?php endforeach; ?>
+		<tr>
+			<td class="totalcost" colspan="3">Total cost:</td>
+			<td><?=$this->total_cost; ?></td>
+		</tr>
 	</table>
 	<input type="submit" name="basketRemoveSelected" value="Remove from basket" />
 	<input type="submit" name="basketClear" value="Clear your basket" />

@@ -51,15 +51,19 @@ $games_array = array();
 //have used || die("something wrong") but that
 //for some reason turned $conn into a bool.
 if (!$conn){
-    die("db connection unavailable");
+  die("db connection unavailable");
 } else {
 	//we loop though all of the rows in the table
 	//as an array and add them into the array we
-	//just created.
-	var_dump($_SESSION["basket"]);
+	//just created so it can later be passed to the
+  //template.
   while ($rowarray = pg_fetch_array($res)){
       if (isset($_SESSION['basket'])) {
           $in_basket = False;
+          //we loop through the items we already have in
+          //the basket. (UH OH! i just realised we only
+          //have one of everything in stock, so we won't 
+          //bother to allow people to buy two of somthing.)
           foreach ($_SESSION['basket'] as $basket_case) {
               if ($rowarray['refnumber'] == $basket_case){
                 $in_basket = True;
@@ -68,7 +72,7 @@ if (!$conn){
           if (!$in_basket){
             $games_array[] = $rowarray;
           }
- 	    } else {
+ 	    } else { //if there is no basket, we add everything.
  	        $games_array[] = $rowarray;
  	    }
   }
